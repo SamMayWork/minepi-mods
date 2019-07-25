@@ -10,7 +10,7 @@ mc = minecraft.Minecraft.create ()
 
 # First thing's first we need to pick the block we're going to drop
 # on the player, for this example we're going use the sand!
-block = block.SAND.id
+fallingBlock = block.SAND.id
 
 # The size of the circle around the player in which we can drop the
 # block - it would get boring if we dropped a block on the players head
@@ -24,9 +24,9 @@ dropHeight = 50
 delay = 0.1
 
 
-if block == block.SAND.id:
+if fallingBlock == block.SAND.id:
     mc.postToChat("A sand storm is approaching!")
-if block == block.GRAVEL.id:
+if fallingBlock == block.GRAVEL.id:
     mc.postToChat("A gravel storm is approaching")
 else:
     mc.postToChat("There is no storm approaching, but what's that in the sky!?")
@@ -43,7 +43,7 @@ while True:
     rx, rz = randint(int(x-radius), int(x+radius)), randint(int(z-radius), int(z+radius))
 
     # Drop the block!
-    mc.setBlock(rx, dropHeight, rz, block)
+    mc.setBlock(rx, dropHeight, rz, fallingBlock)
 
     # Wait until we can send the next droplet!
     time.sleep(delay)
