@@ -28,7 +28,7 @@ if fallingBlock == block.SAND.id:
     mc.postToChat("A sand storm is approaching!")
 if fallingBlock == block.GRAVEL.id:
     mc.postToChat("A gravel storm is approaching")
-else:
+if fallingBlock != block.SAND.id and fallingBlock != block.GRAVEL.id:
     mc.postToChat("There is no storm approaching, but what's that in the sky!?")
 
 # A fancy way of saying "forever"
